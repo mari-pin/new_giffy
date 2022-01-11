@@ -1,25 +1,22 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './App.css';
-import getGifs from './services/getGifs';
-import setGifs from './services/getGifs';
-
+import ListOfGifs from './Components/ListOfGifs';
+import { useState } from 'react';
 
 
 export default function App() {
 
-  const [gifs, setGifs] =  useState ([])
+  const [keyword, setKeyword] = useState('panda')
 
-  useEffect( function(){
-    getGifs({keyword: 'dogs'}).then(gifs => setGifs(gifs))},[])
-  
   return (
 
     <div className="App">
       <section className="App-content">
-        {
-          gifs.map(singleGif =>  <img src={singleGif}/>)
-        }
-       {/*  <button onClick = {() => setGifs()}>Cambiar gifs</button> */}
+     
+      <button onClick = {() => setKeyword('mapache')}>Cambiar gifs</button>
+       
+
+        <ListOfGifs keyword ={keyword}/>
        
          
       </section>
