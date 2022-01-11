@@ -4,7 +4,8 @@ import getGifs from "../services/getGifs";
 
 
 
-export default function ListOfGifs ({keyword}){
+export default function ListOfGifs ({params}){
+    const{ keyword} = params
 
     const [gifs, setGifs] =  useState ([])
 
@@ -13,19 +14,18 @@ export default function ListOfGifs ({keyword}){
         getGifs({keyword}).then(gifs => setGifs(gifs))},[keyword])
       
 
-    return gifs.map(({id, title, url}) => 
-        <Gif 
-            key =  {id}//id unica siempre 
-            title={title} 
-            url={url} 
-            id={id}
-        />
+    return <div>{
         
-    )
-}
-
-    
-
-
-   
-    
+        gifs.map(({id, title, url}) => 
+            <Gif 
+                key =  {id}//id unica siempre 
+                title={title} 
+                url={url} 
+                id={id}
+            />
+        
+        )
+    }
+        
+        </div>
+    }
