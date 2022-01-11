@@ -14,7 +14,11 @@ export default function App() {
 
     <div className="App">
       <section className="App-content">
-        <h1>app</h1>
+        <h1 className='title'>App de Gifs</h1>
+        <a href='/gif/panda'>Gif de Pandas</a>
+        <a href='/gif/cats'>Gif de Gatos</a>
+        <a href='/gif/dogs'>Gif de Perros</a>
+        <a href='/gif/mapache'>Gif de Mapaches</a>
         <Route 
         component={ListOfGifs}
         path='/gif/:keyword'/>

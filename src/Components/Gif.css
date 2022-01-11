@@ -16,3 +16,15 @@
     width:75%;
     height: 50%;
 }
+a{
+    color: #fa8686d5;
+    margin-bottom: 13px;
+    font-size: 25px;
+
+
+}
+.title{
+    font-size: 45px;
+    color:coral;
+    text-transform: capitalize;
+}
