@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import ListOfGifs from './Components/ListOfGifs';
-import { Route } from "wouter";
+import { Link,Route } from "wouter";
 
 /* import { useState } from 'react'; */
 
@@ -15,10 +15,14 @@ export default function App() {
     <div className="App">
       <section className="App-content">
         <h1 className='title'>App de Gifs</h1>
-        <a href='/gif/panda'>Gif de Pandas</a>
-        <a href='/gif/cats'>Gif de Gatos</a>
-        <a href='/gif/dogs'>Gif de Perros</a>
-        <a href='/gif/mapache'>Gif de Mapaches</a>
+        <Link 
+        to='/gif/panda'>Gif de Pandas</Link>
+        <Link 
+        to='/gif/cats'>Gif de Gatos</Link>
+        <Link 
+        to='/gif/dogs'>Gif de Perros</Link>
+        <Link 
+        to='/gif/mapache'>Gif de Mapaches</Link>
         <Route 
         component={ListOfGifs}
         path='/gif/:keyword'/>
